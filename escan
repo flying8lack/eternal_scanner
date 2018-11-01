@@ -15,7 +15,7 @@ green='\033[92m'
 red='\e[1;31m'
 yellow='\e[0;33m'
 orange='\e[38;5;166m'
-rt="500"
+
 #Current Version
 vers="2.3"
 
@@ -633,7 +633,7 @@ inv=$(echo "$ip" | grep [a-zA-Z] )
 if [[ ! -z "$inv" ]]
 then
 echo ""
-echo -e "$yellow" "Invalid IP/IP Range" 
+echo -e "$yellow" "Invalid IP Range" 
 exit 1
 fi
 
@@ -649,7 +649,7 @@ if [ "$ip" == "$val" ]
 then
 echo -e "$cyan" "Scanning all internet will take hours !"
 echo ""
-echo -ne "$green" "Do you still want to continue ? (y/N) : ";tput sgr0
+echo -ne "$green" "Do you still want to continue? (y/N) : ";tput sgr0
 read -r opt
 echo ""
 case "$opt" in
@@ -987,7 +987,7 @@ then
 chknet
 if [ -z "$out" ]
 then
-echo "Invalid argument , write ./escan -h for help"
+echo "Invalid argument , please write ./escan -h for help"
 exit 1
 else
 if [[ "$2" -ge 100 && "$2" -le 100000000 ]]
@@ -999,7 +999,7 @@ chkdep
 logo
 mass
 else
-echo "Invalid argument , write ./escan -h for help"
+echo "Invalid argument , please write ./escan -h for help"
 exit 1
 fi
 fi
